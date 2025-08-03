@@ -1,0 +1,112 @@
+/* fuente mas bonita que la default */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Montserrat", sans-serif;
+}
+/* navbar  */
+nav{
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+button{
+    cursor: pointer;
+}
+.nav-items{
+    background-color: #D3D3D3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px 15px;
+    width: 90%;
+    input{
+        height: 25px;
+        width: 60%;
+        padding-left: 10px;
+        border: 1px solid #000;
+    }
+    input::placeholder{
+        font-style: italic;
+    }
+}
+.session-btn{
+    color: #fff;
+    background-color: #1E90FF;
+    border: 2px solid black;
+    padding: 5px 10px;
+}
+
+/* main styling */
+main{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.column-container{
+    width: 92%;/* 92 por que asi se alinean las columnas con la barra de navegacion tiene en cuenta los margin el gap y los padding*/
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.left div, .right div{
+    border: 2px solid #000;
+}
+.left{
+    flex: 5;
+    height: fit-content;
+}
+.right{
+    flex: 3;
+}
+
+/* estilo de la columna izquierda */
+.left .pet ,.create-entry{
+    margin-top: 20px;
+}
+.pet > *{
+    padding: 10px;
+}
+.pet .like-btn{
+    margin-left: 1%;
+    margin-bottom: 1%;
+    background-color: #FFFFCC;
+    padding: 2px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    
+}
+.pet h3{
+    margin-top: 20px;
+}
+.pet p {
+    font-size: 14px;
+}
+.noun{
+    font-size: 12px;
+    color: #616161;
+}
+
+/* estilo de la columna derecha */
+.right > *{
+    padding: 15px;
+} 
+.right p {
+    margin-bottom: 15px;
+    font-size: 12px;
+
+}  
+.add-definition{
+    background-color: #008000;
+    border: 2px solid #000;
+    color: #fff;
+    padding: 5px 50px;
+    font-size: 10px;
+}
