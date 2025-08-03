@@ -1,13 +1,15 @@
 let sessionBtn = document.querySelector(".session-btn")
 let addDefinititon = document.querySelector(".add-definition")
-let likeBtn = document.querySelector(".like-btn")
-let secondLikeBtn = document.querySelector(".second-like")
+let likeBtn = document.querySelectorAll(".like-btn")
+let petDiv = document.querySelectorAll(".pet")
+
 
 //contador de likes dentro del html
-let likeCounter = document.querySelector(".like-counter")
-let likeCounterTwo = document.querySelector(".like-counter-two")
+let likeCounter = document.querySelectorAll(".like-counter")
+
 // Para el boton de sesion
 sessionBtn.addEventListener(("click"), () => {
+    // Cambia el texto del boton de sesion
     if(sessionBtn.innerText == "Cerrar sesión"){
         sessionBtn.innerText = "Iniciar sesión"
     }else{
@@ -17,20 +19,38 @@ sessionBtn.addEventListener(("click"), () => {
 
 // Para el boton de agregar
 addDefinititon.addEventListener("click", () =>{
-    addDefinititon.remove()
+    addDefinititon.remove() // remueve el boton de agregar
 })
 
 // Para los botones de me gusta
-let counter = 0;
+likeBtn.forEach((btn) => {
+    let counter = 0;
+    btn.addEventListener("click", () =>{
+        // para el prompt
+        let pet = btn.closest(".pet")
+        let title = pet.querySelector('h3').textContent
+
+        // likes
+        let likes = pet.querySelector(".like-counter")
+        alert(`${title} was liked`)
+        counter += 1;
+        likes.innerText = counter
+       
+    })
+})
+
+
+// lo hice asi primero
+/* let counter = 0;
 likeBtn.addEventListener("click",() =>{
     counter += 1
     likeCounter.innerText = counter
-    alert("Gato Atigrado was liked")
+    alert("title here was liked")
 })
 
 let counter2 = 0;
 secondLikeBtn.addEventListener("click", () =>{
     counter2 += 1
     likeCounterTwo.innerText = counter2
-    alert("Golden Retriever was liked")
-})
+    alert("title here was liked")
+}) */
