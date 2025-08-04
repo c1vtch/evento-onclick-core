@@ -1,7 +1,7 @@
 let sessionBtn = document.querySelector(".session-btn")
 let addDefinititon = document.querySelector(".add-definition")
 let likeBtn = document.querySelectorAll(".like-btn")
-let petDiv = document.querySelectorAll(".pet")
+
 
 
 //contador de likes dentro del html
@@ -27,12 +27,15 @@ likeBtn.forEach((btn) => {
     let counter = 0;
     btn.addEventListener("click", () =>{
         // para el prompt
-        let pet = btn.closest(".pet")
+        let pet = btn.closest(".pet") 
         let title = pet.querySelector('h3').textContent
 
         // likes
         let likes = pet.querySelector(".like-counter")
+
         alert(`${title} was liked`)
+
+        // se actualiza el like
         counter += 1;
         likes.innerText = counter
        
@@ -40,7 +43,7 @@ likeBtn.forEach((btn) => {
 })
 
 
-// lo hice asi primero
+// lo hice asi primero y funcionaba pero tendria que repetir el codigo para cada nuevo div 
 /* let counter = 0;
 likeBtn.addEventListener("click",() =>{
     counter += 1
